@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yoki CTF</title>
+</head>
+<body>
+<center><h1>Oops!施工中！</h1></center>
+<center><p>新版的Yoki Security CTF platform，基于Django2.0.这是你没有玩过的船新版本</p></center>
+<hr>
+<div>
+    <h5>题包处</h5>
+    {% for packageInfo in packageInfos %}
+        <p>{{ packageInfo.package_name }}</p>
+        <p>{{ packageInfo.package_content }}</p>
+        <a href="{% url "subject_id" subject_id %}">{{ packageInfo.package_include }}</a>
+    {% endfor %}
+</div>
+</body>
+</html>

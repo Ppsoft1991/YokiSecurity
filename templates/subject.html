@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>题目</title>
+</head>
+<body>
+<h1>{{ subjectObject.title }}</h1><br>
+题目作者:<p>{{ subjectObject.author }}</p>
+创建时间:<p>{{ subjectObject.create_time }}</p>
+答题人数:<p>{{ subjectObject.answer_number }}</p>
+<hr>
+<p>{{ subjectObject.content }}</p>
+<button type="button"><a href="{{ subjectObject.subject_addr }}">点击前往</a></button>
+</body>
+</html>
