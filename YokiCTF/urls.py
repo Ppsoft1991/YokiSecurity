@@ -21,6 +21,5 @@ from index import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index),
-    path('base/',views.baseNavbar),
     path('subject',include(urls))
 ]
