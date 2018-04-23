@@ -8,13 +8,15 @@
         <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 20%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
     </div>
-    <div>
     <br>
-        <h5>题包处</h5>
+    <div class="card" style="width: 18rem;">
         {% for packageInfo in packageInfos %}
-            <p>{{ packageInfo.package_name }}</p>
-            <p>{{ packageInfo.package_content }}</p>
-            <button class="btn btn-primary">{{ packageInfo.package_name }}<a href="#"></a></button>
+        <div class="card-body">
+            <h5 class="card-title">{{ packageInfo.package_name }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ packageInfo.package_type }}</h6>
+            <p class="card-text">{{ packageInfo.package_content }}</p>
+            <button class="button btn btn-primary">GO<a href="#"></a></button>
+        </div>
         {% endfor %}
     </div>
 {% endblock %}

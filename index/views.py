@@ -17,3 +17,8 @@ def selectSubjects(request,subject_id):
 
 def baseNavbar(request):
     return render(request,"base.html",context={"subjectType":Navbar})
+
+def typeDisplay(request,type):
+    typefilter = subject.objects.filter(subject_type__type_name=type)
+
+    return render(request,"type.html",context={"subjec_type":typefilter,"subjectType":Navbar})
