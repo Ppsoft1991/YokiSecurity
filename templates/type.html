@@ -8,15 +8,19 @@
     <div class="card-header" id="{{ foo.id }}">
       <h5 class="mb-0">
           {{ foo.title }}
-        <button class="btn btn-info" data-toggle="collapse" data-target="#data{{ foo.id }}" aria-expanded="true" aria-controls="{{ foo.id }}">
-          GO
-        </button>
+          <button class="btn btn-info" style="float :right" data-toggle="collapse" data-target="#data{{ foo.id }}" aria-expanded="true" aria-controls="{{ foo.id }}">
+              详情
+          </button>
       </h5>
     </div>
 
     <div id="data{{ foo.id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body">
-        {{ foo.content }}
+          <a href="#" class="badge badge-pill badge-primary">{{ foo.author }}</a>
+          <span class="badge badge-pill badge-light">{{ foo.create_time }}</span>
+          <span class="badge badge-pill badge-light">{{ foo.answer_number }}位小伙伴已提交flag</span>
+          <p>{{ foo.content }}</p>
+          <a class="btn btn-info" href="{{ foo.subject_addr }}">GO</a>
       </div>
     </div>
   </div>
