@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path,include
 from index import urls
 from index import views
+from index.views import packageDisplay
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index),
-    path('subject',include(urls))
+    path('subject/',include(urls)),
+    path('package/<package_name>', packageDisplay, name="package_name")
 ]

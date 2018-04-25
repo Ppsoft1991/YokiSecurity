@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -7,6 +8,10 @@ class subjectType(models.Model):
 
     def __str__(self):
         return self.type_name
+
+    class Meta:
+        verbose_name = '题目分类'
+        verbose_name_plural = '分类列表'
 
 
 class subject(models.Model):
@@ -23,6 +28,10 @@ class subject(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name = '新增题目'
+        verbose_name_plural = '题目列表'
+
 
 class subjectPackage(models.Model):
     package_name = models.CharField(max_length=30)
@@ -32,3 +41,7 @@ class subjectPackage(models.Model):
 
     def __str__(self):
         return self.package_name
+
+    class Meta:
+        verbose_name = "题包"
+        verbose_name_plural = "题包列表"

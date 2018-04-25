@@ -16,7 +16,7 @@
             <h5 class="card-title">{{ packageInfo.package_name }}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{ packageInfo.package_type }}</h6>
             <p class="card-text">{{ packageInfo.package_content }}</p>
-            <a class="button btn btn-primary" href="#" >GO</a>
+            <a class="button btn btn-primary" href="{% url "package_name" packageInfo.package_name %}" >GO</a>
         </div>
         {% endfor %}
     </div>

@@ -14,11 +14,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="/">Yoki CTF</a>
         <ul class="navbar-nav">
-            {% for foo in subjectType %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url "type" foo.type_name %}">{{ foo.type_name }}</a>
-                </li>
-            {% endfor %}
+            {% include 'navbar.html' %}
         </ul>
         </nav>
 <div>

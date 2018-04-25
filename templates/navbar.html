@@ -1,0 +1,5 @@
+{% for foo in navbar %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url "type" foo.type_name %}">{{ foo.type_name }}</a>
+    </li>
+{% endfor %}
