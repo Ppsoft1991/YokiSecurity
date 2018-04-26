@@ -25,16 +25,16 @@
 </div>
 <nav class="navbar navbar-light bg-light fixed-bottom">
   <form class="form-inline" style="margin-left: auto;margin-right: auto;">
-    Flag:<input  id="getFlag" class="form-control mr-sm-2" >
-    <button class="btn btn-outline-dark" type="button" id="flagButton">提交</button>
+    Flag:<input  id="getFlag" class="form-control mr-sm-2" onkeydown="if(event.keyCode===13) transFlag()">
+    <button class="btn btn-outline-dark" type="button" onclick="transFlag()">提交</button>
   </form>
 </nav>
 <script>
-    $('#flagButton').click(function () {
-        $.getJSON("/flag/"+$('#getFlag').val(),function (data) {
-            alert(data.flag_status);
-        })
+function transFlag () {
+    $.getJSON("/flag/" + $('#getFlag').val(), function (data) {
+        alert(data.flag_status);
     })
+}
 </script>
 </body>
 </html>
