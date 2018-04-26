@@ -11,16 +11,30 @@
 </head>
 <body>
 <div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="/">Yoki CTF</a>
         <ul class="navbar-nav">
             {% include 'navbar.html' %}
         </ul>
-        </nav>
-<div>
+    </nav>
+
+<div style="margin-bottom: 100px">
         {% block body %}
         {% endblock %}
-    </div>
 </div>
+</div>
+<nav class="navbar navbar-light bg-light fixed-bottom">
+  <form class="form-inline" style="margin-left: auto;margin-right: auto;">
+    Flag:<input  id="getFlag" class="form-control mr-sm-2" >
+    <button class="btn btn-outline-dark" type="button" id="flagButton">提交</button>
+  </form>
+</nav>
+<script>
+    $('#flagButton').click(function () {
+        $.getJSON("/flag/"+$('#getFlag').val(),function (data) {
+            alert(data.flag_status);
+        })
+    })
+</script>
 </body>
 </html>
